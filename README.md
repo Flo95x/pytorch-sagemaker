@@ -1,2 +1,5 @@
 # pytorch-sagemaker
-Project showing example of pytorch model training and sagemaker deployment 
+Project showing examples of pytorch model training and sagemaker deployment
+
+## Requirements
+Install project as package `torchmaker` with `pip3 install -e .`.
