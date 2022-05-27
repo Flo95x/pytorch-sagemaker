@@ -2,7 +2,7 @@
 import torchvision
 
 from torchmaker.examples.cifar.dataloader import get_train_test_loader, batch_size_default, classes
-from mwfunctions.image.visualize.visualize_fns import imshow
+from torchmaker.functions.image_fns import imshow
 
 trainloader, testloader = get_train_test_loader(batch_size=batch_size_default)
 

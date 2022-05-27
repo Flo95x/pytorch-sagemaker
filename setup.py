@@ -8,6 +8,8 @@ INSTALL_REQUIRES = [
     'torchvision',
     'Pillow',
     'matplotlib',
+    'sentence-transformers',
+    'transformers',
     'sagemaker',
     'protobuf~=3.19.0', # hopefully fixes bug regarding sagemaker import ("TypeError: Descriptors cannot not be created directly.")
 ]
