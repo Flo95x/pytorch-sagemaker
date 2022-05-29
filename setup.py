@@ -10,6 +10,7 @@ INSTALL_REQUIRES = [
     'matplotlib',
     'sentence-transformers',
     'transformers',
+    'imagen_pytorch',
     'sagemaker',
     'protobuf~=3.19.0', # hopefully fixes bug regarding sagemaker import ("TypeError: Descriptors cannot not be created directly.")
 ]
