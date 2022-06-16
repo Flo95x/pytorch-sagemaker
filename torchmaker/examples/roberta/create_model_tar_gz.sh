@@ -1,4 +1,12 @@
 # creates model.tar.gz file
+# Structure:
+# model.tar.gz
+#   |_ code
+#       * inference.py
+#   * pytorch_model.bin
+#   * tokenizer_config.json
+#   ...
+
 export model_id=cross-en-de-roberta-sentence-transformer
 
 # place inference py inside of code dir

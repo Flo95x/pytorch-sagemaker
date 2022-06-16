@@ -9,7 +9,7 @@ device = "cpu"
 
 def model_fn(model_dir):
     model = Net()
-    with open(os.path.join(model_dir, "train/cifar_net.pth"), "rb") as f:
+    with open(os.path.join(model_dir, "cifar_net.pth"), "rb") as f:
         model.load_state_dict(torch.load(f))
     model.to(device).eval()
     return model
