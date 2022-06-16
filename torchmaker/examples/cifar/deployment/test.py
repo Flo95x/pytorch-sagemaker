@@ -3,14 +3,14 @@ import torchvision
 
 from sagemaker.pytorch.model import PyTorchPredictor
 
-from torchmaker.config import AWS_SAGEMAKER_CIFAR_ENDPOINT_NAME
+from torchmaker.config import SAGEMAKER_CIFAR_ENDPOINT_NAME
 from torchmaker.examples.cifar.dataloader import get_train_test_loader, classes, batch_size_default
 from torchmaker.functions.profiling_fns import log_time
 from torchmaker.functions.image_fns import imshow
 from sagemaker.serializers import JSONSerializer
 from sagemaker.deserializers import JSONDeserializer
 
-predictor = PyTorchPredictor(endpoint_name=AWS_SAGEMAKER_CIFAR_ENDPOINT_NAME,
+predictor = PyTorchPredictor(endpoint_name=SAGEMAKER_CIFAR_ENDPOINT_NAME,
                              serializer=JSONSerializer(),
                              deserializer=JSONDeserializer())
 

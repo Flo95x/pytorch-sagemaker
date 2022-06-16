@@ -12,22 +12,22 @@ model = PyTorchModel(
     py_version="py3",
 )
 
-if config.AWS_SAGEMAKER_SERVERLESS:
+if config.SAGEMAKER_CIFAR_SERVERLESS:
     from sagemaker.serverless import ServerlessInferenceConfig
 
     serverless_config = ServerlessInferenceConfig(memory_size_in_mb=4096,
                                                   max_concurrency=1)  # max_concurrency=3 3 was not possible with high torch version
 
     predictor = model.deploy(
-        endpoint_name=config.AWS_SAGEMAKER_CIFAR_ENDPOINT_NAME,
+        endpoint_name=config.SAGEMAKER_CIFAR_ENDPOINT_NAME,
         serializer=JSONSerializer(),
         deserializer=JSONDeserializer(),
         serverless_inference_config=serverless_config)
 else:
     predictor = model.deploy(
-        endpoint_name=config.AWS_SAGEMAKER_CIFAR_ENDPOINT_NAME,
+        endpoint_name=config.SAGEMAKER_CIFAR_ENDPOINT_NAME,
         initial_instance_count=1,
-        instance_type=config.AWS_SAGEMAKER_INSTANCE_TYPE,
+        instance_type=config.SAGEMAKER_INSTANCE_TYPE,
         serializer=JSONSerializer(),
         deserializer=JSONDeserializer(),
     )

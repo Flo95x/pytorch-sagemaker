@@ -3,12 +3,12 @@ import torchvision
 
 from sagemaker.pytorch.model import PyTorchPredictor
 
-from torchmaker.config import AWS_SAGEMAKER_ROBERTA_ENDPOINT_NAME
+from torchmaker.config import SAGEMAKER_ROBERTA_ENDPOINT_NAME
 from torchmaker.functions.profiling_fns import log_time
 from sagemaker.serializers import JSONSerializer
 from sagemaker.deserializers import JSONDeserializer
 
-predictor = PyTorchPredictor(endpoint_name=AWS_SAGEMAKER_ROBERTA_ENDPOINT_NAME,
+predictor = PyTorchPredictor(endpoint_name=SAGEMAKER_ROBERTA_ENDPOINT_NAME,
                              serializer=JSONSerializer(),
                              deserializer=JSONDeserializer())
 
