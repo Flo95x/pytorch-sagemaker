@@ -16,7 +16,7 @@ if config.SAGEMAKER_ROBERTA_SERVERLESS:
     from sagemaker.serverless import ServerlessInferenceConfig
 
     serverless_config = ServerlessInferenceConfig(memory_size_in_mb=3072,
-                                                  max_concurrency=1)  # max_concurrency=3 3 was not possible with high torch version
+                                                  max_concurrency=5)  # max_concurrency=3 3 was not possible with high torch version
 
     predictor = model.deploy(
         endpoint_name=config.SAGEMAKER_ROBERTA_ENDPOINT_NAME,
